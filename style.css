@@ -1,0 +1,342 @@
+:root {
+    --primary-color: #0d1b2a;
+    --secondary-color: #415a77;
+    --accent-color: #6a994e;
+    --text-color: #e0e0e0;
+    --light-text-color: #f5f5f5;
+    --light-bg: #f5f5f5;
+    --dark-bg: #1b263b;
+    --optimized-color: #38a3a5;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+.hero-section {
+    background-color: var(--dark-bg);
+    color: var(--light-text-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #5d8b44;
+}
+
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section.dark-bg {
+    background-color: var(--dark-bg);
+    color: var(--light-text-color);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+/* Demonstração */
+.demonstration-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.map-placeholder {
+    width: 500px;
+    height: 350px;
+    background-color: #2c3a4f;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.route {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    animation: fadeIn 2s ease-out;
+}
+
+.route-a {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.1));
+    clip-path: polygon(0 10%, 100% 25%, 100% 75%, 0% 90%);
+}
+
+.route-b {
+    background: linear-gradient(to right, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.1));
+    clip-path: polygon(0 40%, 100% 55%, 100% 65%, 0% 80%);
+    animation-delay: 1s;
+}
+
+.route-label {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.optimized-label {
+    background-color: var(--optimized-color);
+    top: 50%;
+    left: 20%;
+}
+
+.route-details {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.optimized-details {
+    color: var(--optimized-color);
+}
+
+.savings-info {
+    text-align: left;
+    max-width: 400px;
+}
+
+.savings-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.savings-info ul {
+    list-style: none;
+}
+
+.savings-info li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.savings-info .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* Benefícios */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    background-color: #556a84;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+/* Contato */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3a4f;
+    color: var(--light-text-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer .logo {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin-top: 15px;
+    }
+
+    .nav a {
+        margin: 0 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .demonstration-box {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .map-placeholder, .savings-info {
+        max-width: 100%;
+    }
+}
